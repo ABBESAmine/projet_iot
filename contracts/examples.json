@@ -1,0 +1,96 @@
+{
+  "telemetry": {
+    "description": "Données de télémétrie météo publiées par les stations ESP32",
+    "topic": "classroom/esp32-001/telemetry",
+    "payload": {
+      "temperature": 22.5,
+      "humidity": 65.3,
+      "battery": 87,
+      "timestamp": "2026-01-07T12:30:00Z"
+    },
+    "exemples": [
+      {
+        "deviceId": "esp32-001",
+        "temperature": 22.5,
+        "humidity": 65.3,
+        "battery": 87,
+        "timestamp": "2026-01-07T12:30:00Z"
+      },
+      {
+        "deviceId": "esp32-002",
+        "temperature": 18.2,
+        "humidity": 72.1,
+        "battery": 92,
+        "timestamp": "2026-01-07T12:30:05Z"
+      }
+    ]
+  },
+  "events": {
+    "description": "Événements générés par les stations (alertes, erreurs, etc.)",
+    "topic": "classroom/esp32-001/events",
+    "payload": {
+      "type": "alert",
+      "message": "Batterie faible",
+      "level": "warning",
+      "timestamp": "2026-01-07T12:30:00Z"
+    },
+    "exemples": [
+      {
+        "type": "alert",
+        "message": "Batterie faible",
+        "level": "warning",
+        "timestamp": "2026-01-07T12:30:00Z"
+      },
+      {
+        "type": "error",
+        "message": "Capteur de température défaillant",
+        "level": "error",
+        "timestamp": "2026-01-07T12:30:00Z"
+      }
+    ]
+  },
+  "cmd": {
+    "description": "Commandes à envoyer aux stations",
+    "topic": "classroom/esp32-001/cmd",
+    "payload": {
+      "command": "reset",
+      "parameters": {}
+    },
+    "exemples": [
+      {
+        "command": "reset",
+        "parameters": {}
+      },
+      {
+        "command": "set_interval",
+        "parameters": {
+          "interval": 30
+        }
+      }
+    ]
+  },
+  "status": {
+    "description": "Statut de la station (online/offline, version, etc.)",
+    "topic": "classroom/esp32-001/status",
+    "payload": {
+      "status": "online",
+      "version": "1.0.0",
+      "uptime": 3600,
+      "timestamp": "2026-01-07T12:30:00Z"
+    },
+    "exemples": [
+      {
+        "status": "online",
+        "version": "1.0.0",
+        "uptime": 3600,
+        "timestamp": "2026-01-07T12:30:00Z"
+      },
+      {
+        "status": "offline",
+        "last_seen": "2026-01-07T12:25:00Z",
+        "timestamp": "2026-01-07T12:30:00Z"
+      }
+    ]
+  }
+}
+
